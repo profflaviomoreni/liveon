@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import br.com.fiap.live.models.PesoModel;
-import br.com.fiap.liveon.controllers.pesousuario.PesoUsuarioListarServlet;
+import br.com.fiap.liveon.controllers.pesousuario.PesoUsuarioEditarServlet;
 
 public class PesoDAO {
 
@@ -46,6 +46,10 @@ public class PesoDAO {
 	
 	public PesoModel findById(int id) throws SQLException {
 		PesoModel pesoModel;
+		
+		pesoModel = new PesoModel(1,2,71,12,15,new Date());
+		
+		/*
 		try {
 			
 			String sql = "SELECT cd_registro, t_pessoa_cd_conta,  nr_peso, nr_gordura, dt_registro FROM t_reg_peso WHERE cd_registro = ?";
@@ -74,6 +78,7 @@ public class PesoDAO {
 		} finally {
 			connectionManager.closeConnection();
 		}
+		*/
 		
 		return pesoModel;
 	}

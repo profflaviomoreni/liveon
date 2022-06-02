@@ -33,8 +33,8 @@
 				<td>${peso.peso}</td>  
 				<td>${peso.imc}</td>  
 				<td>
-					<a href="peso-usuario-excluir?id=${peso.idPeso}">Excluir</a> | 
-					<a href="peso-usuario-editar?id=${peso.idPeso}">Editar</a>
+					<a href="peso-usuario-excluir?idPeso=${peso.idPeso}">Excluir</a> | 
+					<a href="peso-usuario-editar?idPeso=${peso.idPeso}">Editar</a>
 				</td>
 			</tr>
 		</c:forEach>
