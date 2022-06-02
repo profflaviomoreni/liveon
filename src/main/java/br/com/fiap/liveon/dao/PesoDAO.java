@@ -4,9 +4,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import br.com.fiap.live.models.PesoModel;
+import br.com.fiap.liveon.controllers.pesousuario.PesoUsuarioListarServlet;
 
 public class PesoDAO {
 
@@ -81,7 +83,13 @@ public class PesoDAO {
 	public List<PesoModel> getAllByPessoa(int idPessoa) throws SQLException {
 		
 		List<PesoModel> pesos = new ArrayList<>();
+		pesos.add(new PesoModel(1,2,71,12,15,new Date()));
+		pesos.add(new PesoModel(2,2,72,12,15,new Date()));
+		pesos.add(new PesoModel(3,2,73,12,15,new Date()));
+		pesos.add(new PesoModel(4,2,74,12,15,new Date()));
+		pesos.add(new PesoModel(5,2,75,12,15,new Date()));
 		
+		/*
 		try {
 			
 			String sql = "SELECT cd_registro, t_pessoa_cd_conta,  nr_peso, nr_gordura, dt_registro FROM t_reg_peso WHERE t_pessoa_cd_conta = ? ORDER BY dt_registro DESC";
@@ -105,6 +113,7 @@ public class PesoDAO {
 		} finally {
 			connectionManager.closeConnection();
 		}
+		*/
 		
 		return pesos;
 		
