@@ -10,6 +10,7 @@ public class PesoModel {
 	private double imc;
 	private double gorduraCorporal;
 	private Date data;
+	private int idRisco;
 	
 	
 	public PesoModel() {
@@ -28,7 +29,19 @@ public class PesoModel {
 	}
 
 	
-	
+
+	public PesoModel(int idPeso, int idPessoa, double peso, double imc, double gorduraCorporal, Date data,
+			int idRisco) {
+		super();
+		this.idPeso = idPeso;
+		this.idPessoa = idPessoa;
+		this.peso = peso;
+		this.imc = imc;
+		this.gorduraCorporal = gorduraCorporal;
+		this.data = data;
+		this.idRisco = idRisco;
+	}
+
 
 	public int getIdPessoa() {
 		return idPessoa;
@@ -87,6 +100,16 @@ public class PesoModel {
 
 	public void setData(Date data) {
 		this.data = data;
+	}
+
+
+	public int getIdRisco() {
+		return idRisco;
+	}
+
+
+	public void setIdRisco(int idRisco) {
+		this.idRisco = idRisco;
 	}
 
 

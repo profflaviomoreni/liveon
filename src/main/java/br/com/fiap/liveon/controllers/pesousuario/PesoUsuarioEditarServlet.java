@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,17 +14,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.fiap.live.models.PesoModel;
+import br.com.fiap.live.models.RiscoPesoModel;
 import br.com.fiap.liveon.dao.PesoDAO;
+import br.com.fiap.liveon.dao.RiscoPesoDAO;
 
 @WebServlet("/peso-usuario-editar")
 public class PesoUsuarioEditarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private PesoDAO pesoDAO;
+	private RiscoPesoDAO riscoPesoDAO;
        
     public PesoUsuarioEditarServlet() {
         super();
         pesoDAO = new PesoDAO();
+        riscoPesoDAO = new RiscoPesoDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,6 +36,9 @@ public class PesoUsuarioEditarServlet extends HttpServlet {
 		int idPesoSelecionado = Integer.parseInt(request.getParameter("idPeso"));
 		
 		try {
+			
+			List<RiscoPesoModel> riscos = riscoPesoDAO.findAll();
+			request.setAttribute("riscos", riscos);
 
 			PesoModel peso = pesoDAO.findById(idPesoSelecionado);
 			request.setAttribute("peso", peso);

@@ -48,6 +48,7 @@ public class PesoDAO {
 		PesoModel pesoModel;
 		
 		pesoModel = new PesoModel(1,2,71,12,15,new Date());
+		pesoModel.setIdRisco(2);
 		
 		/*
 		try {

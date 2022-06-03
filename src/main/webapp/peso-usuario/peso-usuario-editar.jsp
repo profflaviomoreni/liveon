@@ -31,6 +31,21 @@
 		<input type="text" id="data" name="data" value="<fmt:formatDate pattern="dd/MM/yyyy" value="${peso.data}"/>"><br>
 		<br> 
 		
+		<label for="Risco">Risco: ${peso.idRisco} </label><br> 
+		<select>
+			<option>Selecione o risco</option>
+			<c:forEach items="${riscos}" var="r">
+				<c:if test="${ peso.idRisco eq r.idRisco }">
+					<option value="${r.idRisco}" selected>${r.nomeRisco}</option>
+				</c:if>
+				<c:if test="${ peso.idRisco ne r.idRisco }">
+					<option value="${r.idRisco}">${r.nomeRisco}</option>
+				</c:if>
+			</c:forEach>
+		</select>
+		
+		<br>
+		<br>
 		<input type="submit" value="Enviar">
 	</form>
 </body>

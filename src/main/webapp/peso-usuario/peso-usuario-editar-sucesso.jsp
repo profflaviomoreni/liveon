@@ -26,7 +26,7 @@
 
 	<br>
 	<br>
-	<a href="peso-usuario-listar">Voltar para a lista de clientes</a>
+	<a href="peso-usuario-listar">Voltar</a>
 		
 </body>
 </html>
